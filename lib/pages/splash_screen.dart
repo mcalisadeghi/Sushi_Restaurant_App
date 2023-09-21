@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/btn.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -68,6 +69,9 @@ class SplashScreen extends StatelessWidget {
               height: 25,
             ),
             // get started button
+            const MyBtn(
+              text: 'Get Start',
+            ),
           ],
         ),
       ),
