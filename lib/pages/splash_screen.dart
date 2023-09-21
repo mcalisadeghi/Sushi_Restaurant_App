@@ -41,6 +41,7 @@ class SplashScreen extends StatelessWidget {
               ),
               child: Image.asset(
                 'assets/images/pic1.png',
+                height: 178,
               ),
             ),
 
@@ -56,12 +57,15 @@ class SplashScreen extends StatelessWidget {
               height: 10,
             ),
             // subtitle
-            Text(
+            const Text(
               'Fell the tat of the most popular Iranan food from anywhere and anytime',
               style: TextStyle(
-                color: Colors.grey[200],
+                color: Colors.grey, //[200],
                 height: 2,
               ),
+            ),
+            const SizedBox(
+              height: 25,
             ),
             // get started button
           ],
