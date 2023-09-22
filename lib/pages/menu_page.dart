@@ -31,12 +31,22 @@ class MenuPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               color: promaryColor,
+              borderRadius: BorderRadius.circular(
+                20.0,
+              ),
+            ),
+            margin: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.all(
+              25.0,
             ),
             child: Row(
               children: [
                 // promo message
-                Text(
+                const Text(
                   'geet 32% Promo',
+                ),
+                const SizedBox(
+                  height: 20.0,
                 ),
                 // redem button
                 MyBtn(
