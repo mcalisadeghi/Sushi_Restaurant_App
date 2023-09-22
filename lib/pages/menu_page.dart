@@ -1,10 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
+import 'package:flutter_application_1/components/food_tile.dart';
+import 'package:flutter_application_1/model/food_model.dart';
 import 'package:flutter_application_1/pages/them/color.dart';
 
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
 
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+  // food menu
+  List foodMenu = [
+    // salmon sushi
+    Food(
+      name: 'salmon',
+      price: '20',
+      imagePath: 'assets/images/pic1',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'Tuna',
+      price: '20',
+      imagePath: 'assets/images/pic1',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'salmon',
+      price: '20',
+      imagePath: 'assets/images/pic1',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'salmon',
+      price: '20',
+      imagePath: 'assets/images/pic1',
+      rating: '4.5',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +136,7 @@ class MenuPage extends StatelessWidget {
           SizedBox(
             height: 25,
           ),
-          // menu lit
+          // menu list
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 25.0,
@@ -116,8 +151,18 @@ class MenuPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 25,
+            height: 10,
           ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (
+                BuildContext context,
+                int index,
+              ) =>
+                  FoodTile(),
+            ),
+          ),
+
           // popular food
 
           // menu list
