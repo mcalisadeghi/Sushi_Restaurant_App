@@ -10,16 +10,31 @@ class MyBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          40,
+        ),
+        color: const Color.fromARGB(
           212,
           135,
           81,
           77,
         ),
       ),
-      child: Text(
-        text,
+      padding: const EdgeInsets.all(
+        20.0,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+          ),
+          const Icon(
+            Icons.arrow_forward,
+            color: Colors.white,
+          ),
+        ],
       ),
     );
   }

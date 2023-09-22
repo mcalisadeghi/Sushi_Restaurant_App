@@ -19,10 +19,11 @@ class SplashScreen extends StatelessWidget {
           25.0,
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             // shop name
             Text(
@@ -33,7 +34,7 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             // icon
             Padding(
@@ -42,10 +43,12 @@ class SplashScreen extends StatelessWidget {
               ),
               child: Image.asset(
                 'assets/images/pic1.png',
-                height: 178,
+                height: 200,
               ),
             ),
-
+            // const SizedBox(
+            //   height: 25,
+            // ),
             // title
             Text(
               'THE TASTE OF JAPANESE FOOD',
@@ -65,10 +68,10 @@ class SplashScreen extends StatelessWidget {
                 height: 2,
               ),
             ),
-            const SizedBox(
-              height: 25,
-            ),
-            // get started button
+            // const SizedBox(
+            //   height: 25,
+            // ),
+            // // get started button
             const MyBtn(
               text: 'Get Start',
             ),
