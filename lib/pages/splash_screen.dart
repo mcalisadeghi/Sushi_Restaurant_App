@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
+import 'package:flutter_application_1/pages/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -8,12 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(
-        255,
-        138,
-        60,
-        55,
-      ),
+      backgroundColor: promaryColor,
       body: Padding(
         padding: const EdgeInsets.all(
           25.0,
@@ -72,8 +68,12 @@ class SplashScreen extends StatelessWidget {
             //   height: 25,
             // ),
             // // get started button
-            const MyBtn(
+            MyBtn(
               text: 'Get Start',
+              onTap: () => Navigator.pushNamed(
+                context,
+                '/menupage',
+              ),
             ),
           ],
         ),

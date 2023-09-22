@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/menu_page.dart';
 import 'package:flutter_application_1/pages/splash_screen.dart';
 
 void main() {
@@ -19,6 +20,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(),
+      routes: {
+        '/splashscreen': (context) => SplashScreen(),
+        '/menupage': (context) => MenuPage(),
+      },
     );
   }
 }
