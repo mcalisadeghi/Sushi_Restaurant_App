@@ -6,3 +6,9 @@ Color primaryColor = const Color.fromARGB(
   60,
   55,
 );
+Color secondaryColor = const Color.fromARGB(
+  109,
+  140,
+  94,
+  91,
+);
