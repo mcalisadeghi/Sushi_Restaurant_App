@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/shop.dart';
 import 'package:flutter_application_1/pages/menu_page.dart';
@@ -29,8 +27,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const SplashScreen(),
       routes: {
-        '/splashscreen': (context) => const SplashScreen(),
-        '/menupage': (context) => const MenuPage(),
+        '/splashscreen': (BuildContext context) => const SplashScreen(),
+        '/menupage': (BuildContext context) => const MenuPage(),
       },
     );
   }

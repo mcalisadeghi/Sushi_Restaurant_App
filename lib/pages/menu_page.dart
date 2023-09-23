@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/components/food_tile.dart';
-import 'package:flutter_application_1/model/food_model.dart';
+import 'package:flutter_application_1/model/shop.dart';
 import 'package:flutter_application_1/pages/food_detials.dart';
 import 'package:flutter_application_1/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -14,49 +15,11 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  // food menu
-  List foodMenu = [
-    // salmon sushi
-    Food(
-      name: 'salmon',
-      price: '20',
-      imagePath: 'assets/images/pic1.png',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'Tuna',
-      price: '20',
-      imagePath: 'assets/images/pic2.png',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'food 3',
-      price: '20',
-      imagePath: 'assets/images/pic3.png',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'food 4',
-      price: '20',
-      imagePath: 'assets/images/pic4.png',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'food 5',
-      price: '20',
-      imagePath: 'assets/images/pic5.png',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'food 6',
-      price: '20',
-      imagePath: 'assets/images/pic6.png',
-      rating: '4.5',
-    ),
-  ];
   // naviate to food item details page
-
   void navigateToFoodD(int index) {
+    // get the shop and its menu
+    final shop = context.read<Shop>();
+    final foodMenu = shop.foodMenu;
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -69,6 +32,9 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    // get the shop and its menu
+    final shop = context.read<Shop>();
+    final foodMenu = shop.foodMenu;
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
