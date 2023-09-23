@@ -74,7 +74,7 @@ class _MenuPageState extends State<MenuPage> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: promaryColor,
+              color: primaryColor,
               borderRadius: BorderRadius.circular(
                 20.0,
               ),
