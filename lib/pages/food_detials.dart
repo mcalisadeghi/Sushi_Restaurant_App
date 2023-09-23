@@ -63,7 +63,7 @@ class _FoodDetialsState extends State<FoodDetials> {
                 // image
                 Image.asset(
                   widget.food.imagePath,
-                  width: 200,
+                  fit: BoxFit.cover,
                 ),
                 const SizedBox(
                   height: 20,
