@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/components/food_tile.dart';
 import 'package:flutter_application_1/model/food_model.dart';
+import 'package:flutter_application_1/pages/food_detials.dart';
 import 'package:flutter_application_1/pages/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,6 +36,19 @@ class _MenuPageState extends State<MenuPage> {
       rating: '4.5',
     ),
   ];
+  // naviate to food item details page
+
+  void navigateToFoodD(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FoodDetials(
+          food: foodMenu[index],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,6 +175,7 @@ class _MenuPageState extends State<MenuPage> {
               ) =>
                   FoodTile(
                 food: foodMenu[index],
+                onTap: () => navigateToFoodD(index),
               ),
             ),
           ),
@@ -174,12 +189,12 @@ class _MenuPageState extends State<MenuPage> {
                 20.0,
               ),
             ),
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               left: 25.0,
               right: 25.0,
               bottom: 25.0,
             ),
-            padding: EdgeInsets.all(
+            padding: const EdgeInsets.all(
               20.0,
             ),
             child: Row(
@@ -220,7 +235,7 @@ class _MenuPageState extends State<MenuPage> {
                   ],
                 ),
                 // heart
-                Icon(
+                const Icon(
                   Icons.favorite_outline,
                   color: Colors.grey,
                 ),
