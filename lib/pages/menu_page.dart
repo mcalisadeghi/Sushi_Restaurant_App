@@ -3,7 +3,7 @@ import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/components/food_tile.dart';
 import 'package:flutter_application_1/model/food_model.dart';
 import 'package:flutter_application_1/pages/food_detials.dart';
-import 'package:flutter_application_1/pages/them/color.dart';
+import 'package:flutter_application_1/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MenuPage extends StatefulWidget {
@@ -26,13 +26,31 @@ class _MenuPageState extends State<MenuPage> {
     Food(
       name: 'Tuna',
       price: '20',
-      imagePath: 'assets/images/pic1.png',
+      imagePath: 'assets/images/pic2.png',
       rating: '4.5',
     ),
     Food(
-      name: 'Tuna',
+      name: 'food 3',
       price: '20',
-      imagePath: 'assets/images/pic1.png',
+      imagePath: 'assets/images/pic3.png',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'food 4',
+      price: '20',
+      imagePath: 'assets/images/pic4.png',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'food 5',
+      price: '20',
+      imagePath: 'assets/images/pic5.png',
+      rating: '4.5',
+    ),
+    Food(
+      name: 'food 6',
+      price: '20',
+      imagePath: 'assets/images/pic6.png',
       rating: '4.5',
     ),
   ];

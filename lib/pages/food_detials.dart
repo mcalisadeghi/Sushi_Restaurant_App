@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/model/food_model.dart';
-import 'package:flutter_application_1/pages/them/color.dart';
+import 'package:flutter_application_1/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FoodDetials extends StatefulWidget {
