@@ -18,7 +18,15 @@ class FoodTile extends StatelessWidget {
           20.0,
         ),
       ),
+      margin: const EdgeInsets.only(
+        left: 25,
+      ),
+      padding: const EdgeInsets.all(
+        25.0,
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // images
           Image.asset(
@@ -35,8 +43,32 @@ class FoodTile extends StatelessWidget {
           // price + rating
           SizedBox(
             width: 160,
-            child: Text(
-              '\$' + food.price,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '\$${food.price}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[700],
+                  ),
+                ),
+                // rating
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow[800],
+                    ),
+                    Text(
+                      food.rating,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
           )
         ],

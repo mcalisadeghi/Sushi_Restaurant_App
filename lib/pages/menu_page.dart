@@ -3,6 +3,7 @@ import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/components/food_tile.dart';
 import 'package:flutter_application_1/model/food_model.dart';
 import 'package:flutter_application_1/pages/them/color.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -18,25 +19,19 @@ class _MenuPageState extends State<MenuPage> {
     Food(
       name: 'salmon',
       price: '20',
-      imagePath: 'assets/images/pic1',
+      imagePath: 'assets/images/pic1.png',
       rating: '4.5',
     ),
     Food(
       name: 'Tuna',
       price: '20',
-      imagePath: 'assets/images/pic1',
+      imagePath: 'assets/images/pic1.png',
       rating: '4.5',
     ),
     Food(
-      name: 'salmon',
+      name: 'Tuna',
       price: '20',
-      imagePath: 'assets/images/pic1',
-      rating: '4.5',
-    ),
-    Food(
-      name: 'salmon',
-      price: '20',
-      imagePath: 'assets/images/pic1',
+      imagePath: 'assets/images/pic1.png',
       rating: '4.5',
     ),
   ];
@@ -70,7 +65,9 @@ class _MenuPageState extends State<MenuPage> {
                 20.0,
               ),
             ),
-            margin: const EdgeInsets.symmetric(horizontal: 25.0),
+            margin: const EdgeInsets.symmetric(
+              horizontal: 25.0,
+            ),
             padding: const EdgeInsets.symmetric(
               vertical: 25.0,
               horizontal: 30.0,
@@ -103,18 +100,18 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           // search bar
           Padding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 25.0,
             ),
             child: TextField(
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.black,
                     width: 1.5,
                   ),
@@ -123,17 +120,18 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.red,
                   ),
                   borderRadius: BorderRadius.circular(
                     20.0,
                   ),
                 ),
+                hintText: 'search here ...',
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           // menu list
@@ -150,19 +148,85 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
             child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: foodMenu.length,
               itemBuilder: (
                 BuildContext context,
                 int index,
               ) =>
-                  FoodTile(),
+                  FoodTile(
+                food: foodMenu[index],
+              ),
             ),
           ),
-
+          const SizedBox(
+            height: 25,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(
+                20.0,
+              ),
+            ),
+            margin: EdgeInsets.only(
+              left: 25.0,
+              right: 25.0,
+              bottom: 25.0,
+            ),
+            padding: EdgeInsets.all(
+              20.0,
+            ),
+            child: Row(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // image
+                    Image.asset(
+                      'assets/images/pic5.png',
+                      height: 60,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    // name and price
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Salmo Eggs',
+                          style: GoogleFonts.dmSerifDisplay(
+                            fontSize: 18,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // price
+                        Text(
+                          '\$21.00',
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                // heart
+                Icon(
+                  Icons.favorite_outline,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
+          ),
           // popular food
 
           // menu list
