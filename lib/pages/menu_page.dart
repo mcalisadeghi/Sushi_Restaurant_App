@@ -39,18 +39,30 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        foregroundColor: Colors.grey[800],
         elevation: 0,
-        leading: Icon(
+        leading: const Icon(
           Icons.menu,
-          color: Colors.grey[900],
         ),
-        title: Text(
+        title: const Text(
           'Shiraz',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.grey[900],
-          ),
+          style: TextStyle(),
         ),
+        actions: [
+          // cart button
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                '/cartpage',
+              );
+            },
+            icon: const Icon(
+              Icons.shopping_cart,
+            ),
+          ),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

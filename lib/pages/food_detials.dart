@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/btn.dart';
 import 'package:flutter_application_1/model/food_model.dart';
+import 'package:flutter_application_1/model/shop.dart';
 import 'package:flutter_application_1/them/color.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class FoodDetials extends StatefulWidget {
   final Food food;
@@ -42,7 +44,45 @@ class _FoodDetialsState extends State<FoodDetials> {
     );
   }
 
-  void addToCart() {}
+  void addToCart() {
+    // only add to cart if there is shething in the cart
+    if (quantityCount > 0) {
+      // get access to shop
+      final shop = context.read<Shop>();
+
+      // add to cart
+      shop.addToCart(widget.food, quantityCount);
+
+      // let user know it was successful
+      showDialog(
+        context: context,
+        builder: (BuildContext contex) => AlertDialog(
+          content: const Text(
+            'Successfully added to cart',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          actions: <Widget>[
+            // okay button
+            IconButton(
+              onPressed: () {
+                // pop once to remove dialog box
+                Navigator.pop(context);
+                // pop again to go previous screen
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.done,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/shop.dart';
+import 'package:flutter_application_1/pages/cart_page.dart';
 import 'package:flutter_application_1/pages/menu_page.dart';
 import 'package:flutter_application_1/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splashscreen': (BuildContext context) => const SplashScreen(),
         '/menupage': (BuildContext context) => const MenuPage(),
+        '/cartpage': (BuildContext context) => const CartPage(),
       },
     );
   }
