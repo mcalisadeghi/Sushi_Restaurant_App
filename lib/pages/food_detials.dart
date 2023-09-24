@@ -60,7 +60,7 @@ class _FoodDetialsState extends State<FoodDetials> {
           content: const Text(
             'Successfully added to cart',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
             ),
             textAlign: TextAlign.center,
           ),
@@ -99,7 +99,7 @@ class _FoodDetialsState extends State<FoodDetials> {
               horizontal: 25.0,
             ),
             child: ListView(
-              children: [
+              children: <Widget>[
                 // image
                 Image.asset(
                   widget.food.imagePath,
@@ -111,7 +111,7 @@ class _FoodDetialsState extends State<FoodDetials> {
                 // rating
 
                 Row(
-                  children: [
+                  children: <Widget>[
                     Icon(
                       Icons.star,
                       color: Colors.yellow[800],
@@ -176,7 +176,7 @@ class _FoodDetialsState extends State<FoodDetials> {
             25,
           ),
           child: Column(
-            children: [
+            children: <Widget>[
               // price + quantity
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -192,7 +192,7 @@ class _FoodDetialsState extends State<FoodDetials> {
                   ),
                   // quantity
                   Row(
-                    children: [
+                    children: <Widget>[
                       // mines button
                       Container(
                         decoration: BoxDecoration(

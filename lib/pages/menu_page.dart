@@ -23,7 +23,7 @@ class _MenuPageState extends State<MenuPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => FoodDetials(
+        builder: (BuildContext context) => FoodDetials(
           food: foodMenu[index],
         ),
       ),
@@ -49,7 +49,7 @@ class _MenuPageState extends State<MenuPage> {
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
-        actions: [
+        actions: <Widget>[
           // cart button
           IconButton(
             onPressed: () {
@@ -67,7 +67,7 @@ class _MenuPageState extends State<MenuPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         // promo banner
-        children: [
+        children: <Widget>[
           Container(
             decoration: BoxDecoration(
               color: primaryColor,
@@ -88,7 +88,7 @@ class _MenuPageState extends State<MenuPage> {
                 // promo message
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     const Text(
                       'geet 32% Promo',
                     ),
@@ -194,7 +194,7 @@ class _MenuPageState extends State<MenuPage> {
               20.0,
             ),
             child: Row(
-              children: [
+              children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -209,7 +209,7 @@ class _MenuPageState extends State<MenuPage> {
                     // name and price
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: <Widget>[
                         Text(
                           'Salmo Eggs',
                           style: GoogleFonts.dmSerifDisplay(
@@ -238,11 +238,6 @@ class _MenuPageState extends State<MenuPage> {
               ],
             ),
           ),
-          // popular food
-
-          // menu list
-
-          // popular food
         ],
       ),
     );

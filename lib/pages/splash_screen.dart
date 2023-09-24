@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             const SizedBox(
               height: 20,
             ),
@@ -53,9 +53,9 @@ class SplashScreen extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             // subtitle
             const Text(
               'Fell the tat of the most popular Iranan food from anywhere and anytime',
